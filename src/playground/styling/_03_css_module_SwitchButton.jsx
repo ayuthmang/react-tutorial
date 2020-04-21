@@ -19,10 +19,16 @@ function SwitchButton() {
 
   return (
     <div>
-      <button className=
-        {`${styles['btn__toggle']} 
-        ${isOn ? styles['btn__toggle--on'] : styles['btn__toggle--off']}`}
-        onClick={onClick}>TURN {isOn ? 'OFF' : 'ON'}</button>
+      {/* actually doesn't required BEM convention but just an example */}
+      <button
+        className={`
+          ${styles['btn__toggle']}
+          ${styles[`btn__toggle--${isOn ? "off" : "on"}`]}`
+        }
+        onClick={onClick}
+      >
+        TURN {isOn ? 'OFF' : 'ON'}
+      </button>
     </div>
   )
 }

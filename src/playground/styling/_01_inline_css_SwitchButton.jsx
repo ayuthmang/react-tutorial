@@ -25,7 +25,10 @@ function SwitchButton() {
         borderRadius: "30px",
         padding: "10px"
       }}
-        onClick={onClick}>TURN {isOn ? 'OFF' : 'ON'}</button>
+        onClick={onClick}
+      >
+        TURN {isOn ? 'OFF' : 'ON'}
+      </button>
     </div>
   )
 }

@@ -29,7 +29,10 @@ function SwitchButton() {
     <div>
       <StyledSwitchButton
         isOn={isOn}
-        onClick={onClick}>TURN {isOn ? 'OFF' : 'ON'}</StyledSwitchButton>
+        onClick={onClick}
+      >
+        TURN {isOn ? 'OFF' : 'ON'}
+      </StyledSwitchButton>
     </div>
   )
 }

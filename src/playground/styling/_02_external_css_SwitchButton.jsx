@@ -19,8 +19,13 @@ function SwitchButton() {
 
   return (
     <div>
-      <button className={`btn__toggle btn__toggle--${isOn ? 'off' : 'on'}`}
-        onClick={onClick}>TURN {isOn ? 'OFF' : 'ON'}</button>
+      <button
+        className={`btn__toggle
+                    btn__toggle--${isOn ? 'off' : 'on'}`}
+        onClick={onClick}
+      >
+        TURN {isOn ? 'OFF' : 'ON'}
+      </button>
     </div>
   )
 }
