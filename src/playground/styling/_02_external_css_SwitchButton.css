@@ -1,0 +1,14 @@
+.btn__toggle {
+  color: white;
+  font-weight: bold;
+  border-radius: 30px;
+  padding: 10px;
+}
+
+.btn__toggle--on {
+  background-color: green;
+}
+
+.btn__toggle--off {
+  background-color: red;
+}
