@@ -1,17 +1,17 @@
-import React, { useState } from 'react'
-import styles from './_03_css_module_SwitchButton.module.css'
+import React, { useState } from "react";
+import styles from "./_03_css_module_SwitchButton.module.css";
 
 function useToggle(initialIsOn = false) {
   const [isOn, setIsOn] = useState(initialIsOn);
 
   function handleClick() {
-    setIsOn(!isOn)
+    setIsOn(!isOn);
   }
 
   return {
     isOn,
-    onClick: handleClick
-  }
+    onClick: handleClick,
+  };
 }
 
 function SwitchButton() {
@@ -22,15 +22,14 @@ function SwitchButton() {
       {/* actually doesn't required BEM convention but just an example */}
       <button
         className={`
-          ${styles['btn__toggle']}
-          ${styles[`btn__toggle--${isOn ? "off" : "on"}`]}`
-        }
+          ${styles["btn__toggle"]}
+          ${styles[`btn__toggle--${isOn ? "off" : "on"}`]}`}
         onClick={onClick}
       >
-        TURN {isOn ? 'OFF' : 'ON'}
+        TURN {isOn ? "OFF" : "ON"}
       </button>
     </div>
-  )
+  );
 }
 
-export default SwitchButton
+export default SwitchButton;
