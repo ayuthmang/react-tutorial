@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 
-const Hello = (props) => <h1>Hi, {props.name}</h1>;
+const Hello = (props) => <h1>Hi, {props.name}</h1>
 
 const App = () => (
   <>
@@ -8,6 +8,6 @@ const App = () => (
     <Hello name={'Jane'} />
     <Hello name={'Jim'} />
   </>
-);
+)
 
-export default App;
+export default App
