@@ -1,22 +1,20 @@
-import React from "react";
+import React from 'react'
 
 class Counter extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       count: 0,
-    };
-    this.increment = this.increment.bind(this);
-    this.decrement = this.decrement.bind(this);
-    this.reset = this.reset.bind(this);
+    }
+    this.increment = this.increment.bind(this)
+    this.decrement = this.decrement.bind(this)
+    this.reset = this.reset.bind(this)
   }
 
   increment() {
     this.setState({
       count: this.state.count + 1,
-    });
-
-    this.setState({});
+    })
 
     /**
      * We called setState 4 times, why it's incremented only 1?
@@ -31,25 +29,25 @@ class Counter extends React.Component {
   decrement() {
     this.setState({
       count: this.state.count - 1,
-    });
+    })
   }
 
   reset() {
     this.setState({
       count: 0,
-    });
+    })
   }
 
   render() {
     return (
-      <>
+      <div>
         <p>Count: {this.state.count}</p>
         <button onClick={this.increment}>+1</button>
         <button onClick={this.decrement}>-1</button>
         <button onClick={this.reset}>reset</button>
-      </>
-    );
+      </div>
+    )
   }
 }
 
-export default Counter;
+export default Counter
