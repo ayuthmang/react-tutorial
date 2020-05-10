@@ -24,11 +24,20 @@ test('when clicks decrease button, then it should decreased', () => {
 })
 
 test('when clicks reset, then it should reset', () => {
-  const { getByText } = render(<Counter />)
+  const { getByText } = render(<Counter count={3} />)
 
   const reset = getByText('reset')
   fireEvent.click(reset)
-  fireEvent.click(reset)
 
+  expect(getByText('Count: 0')).toBeInTheDocument()
+})
+
+test('given count is 3, when pass count as props, then it should renders 3', () => {
+  const { getByText } = render(<Counter count={3} />)
+  expect(getByText('Count: 3')).toBeInTheDocument()
+})
+
+test('when props is not passed, then it should renders default count should be 0', () => {
+  const { getByText } = render(<Counter />)
   expect(getByText('Count: 0')).toBeInTheDocument()
 })
