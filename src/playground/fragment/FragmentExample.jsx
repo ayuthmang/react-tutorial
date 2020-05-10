@@ -1,13 +1,15 @@
 import React from 'react'
 
-const Hello = (props) => <h1>Hi, {props.name}</h1>
+export function Hello(props) {
+  return <h1>Hi, {props.name}</h1>
+}
 
-const App = () => (
-  <>
-    <Hello name={'John'} />
-    <Hello name={'Jane'} />
-    <Hello name={'Jim'} />
-  </>
-)
-
-export default App
+export default function App() {
+  return (
+    <>
+      <Hello name={'John'} />
+      <Hello name={'Jane'} />
+      <Hello name={'Jim'} />
+    </>
+  )
+}
