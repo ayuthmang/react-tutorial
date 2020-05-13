@@ -1,37 +1,37 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 
 function useToggle(initialIsOn = false) {
-  const [isOn, setIsOn] = useState(initialIsOn);
+  const [isOn, setIsOn] = useState(initialIsOn)
 
   function handleClick() {
-    setIsOn(!isOn);
+    setIsOn(!isOn)
   }
 
   return {
     isOn,
     onClick: handleClick,
-  };
+  }
 }
 
 function SwitchButton() {
-  const { isOn, onClick } = useToggle();
+  const { isOn, onClick } = useToggle()
 
   return (
     <div>
       <button
         style={{
-          backgroundColor: isOn ? "red" : "green",
-          color: "white",
-          fontWeight: "bold",
-          borderRadius: "30px",
-          padding: "10px",
+          backgroundColor: isOn ? 'red' : 'green',
+          color: 'white',
+          fontWeight: 'bold',
+          borderRadius: '30px',
+          padding: '10px',
         }}
         onClick={onClick}
       >
-        TURN {isOn ? "OFF" : "ON"}
+        TURN {isOn ? 'OFF' : 'ON'}
       </button>
     </div>
-  );
+  )
 }
 
-export default SwitchButton;
+export default SwitchButton
