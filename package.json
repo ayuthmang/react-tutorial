@@ -38,9 +38,13 @@
   },
   "devDependencies": {
     "@types/jest": "^25.2.1",
+    "@types/react": "^16.9.35",
+    "@types/react-redux": "^7.1.8",
+    "@types/redux": "^3.6.0",
     "@types/testing-library__jest-dom": "^5.0.3",
     "@types/testing-library__react": "^10.0.1",
     "prettier": "^2.0.5",
-    "prop-types": "^15.7.2"
+    "prop-types": "^15.7.2",
+    "redux-logger": "^3.0.6"
   }
 }
