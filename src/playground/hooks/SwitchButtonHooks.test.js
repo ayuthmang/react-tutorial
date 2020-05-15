@@ -3,7 +3,6 @@ import { fireEvent, render } from '@testing-library/react'
 
 import SwitchButton from './SwitchButtonHooks'
 
-// SwitchButton.test.js
 test('given switch button is turned-off, when clicks, then it should turned-on', () => {
   const { getByText } = render(<SwitchButton />)
 
@@ -14,7 +13,7 @@ test('given switch button is turned-off, when clicks, then it should turned-on',
 })
 
 test('given switch button is turned-on, when clicks, then it should turned-off', () => {
-  const { getByText } = render(<SwitchButton initialIsOn={true} />)
+  const { getByText } = render(<SwitchButton isOn={true} />)
 
   const btn = getByText('TURN OFF')
   fireEvent.click(btn)

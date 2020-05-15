@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function SwitchButton({ initialIsOn = false }) {
+function SwitchButton({ isOn: initialIsOn = false }) {
   const [isOn, setIsOn] = useState(initialIsOn)
 
   function handleClick() {
