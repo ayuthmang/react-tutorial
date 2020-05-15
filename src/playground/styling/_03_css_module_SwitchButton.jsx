@@ -1,21 +1,12 @@
 import React, { useState } from 'react'
 import styles from './_03_css_module_SwitchButton.module.css'
 
-function useToggle(initialIsOn = false) {
+function SwitchButton({ isOn: initialIsOn = false }) {
   const [isOn, setIsOn] = useState(initialIsOn)
 
-  function handleClick() {
+  function onClick() {
     setIsOn(!isOn)
   }
-
-  return {
-    isOn,
-    onClick: handleClick,
-  }
-}
-
-function SwitchButton() {
-  const { isOn, onClick } = useToggle()
 
   return (
     <div>

@@ -1,18 +1,5 @@
 import React, { useState } from 'react'
-import styled, { css } from 'styled-components'
-
-function useToggle(initialIsOn = false) {
-  const [isOn, setIsOn] = useState(initialIsOn)
-
-  function handleClick() {
-    setIsOn(!isOn)
-  }
-
-  return {
-    isOn,
-    onClick: handleClick,
-  }
-}
+import styled from 'styled-components'
 
 const StyledSwitchButton = styled.button`
   background-color: ${(props) => (props.isOn ? 'red' : 'green')};
@@ -22,8 +9,12 @@ const StyledSwitchButton = styled.button`
   padding: 10px;
 `
 
-function SwitchButton() {
-  const { isOn, onClick } = useToggle()
+function SwitchButton({ isOn: initialIsOn = false }) {
+  const [isOn, setIsOn] = useState(initialIsOn)
+
+  function onClick() {
+    setIsOn(!isOn)
+  }
 
   return (
     <div>
