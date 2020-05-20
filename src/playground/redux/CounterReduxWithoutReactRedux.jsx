@@ -4,8 +4,6 @@ import { createStore } from 'redux'
 // https://blog.logrocket.com/react-redux-connect-when-and-how-to-use-it-f2a1edab2013/
 
 function reducer(state = 0, action) {
-  console.log(arguments)
-
   if (action.type === 'INCREMENT') return state + 1
   else if (action.type === 'DECREMENT') return state - 1
   else if (action.type === 'RESET') return 0
