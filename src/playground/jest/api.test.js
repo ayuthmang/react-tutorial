@@ -16,6 +16,7 @@ test('mock data returns from api', async () => {
     { id: 1, name: 'John' },
     { id: 2, name: 'Jane' },
   ])
+  expect(axiosMock.get).toHaveBeenCalledTimes(1)
 })
 
 // describe('super hero', () => {
