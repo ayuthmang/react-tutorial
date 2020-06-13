@@ -1,32 +1,3 @@
-// // Pure functions
-// function square(x) {
-//   return x * x
-// }
-
-// function squareAll(items) {
-//   return items.map(square)
-// }
-
-// // Impure functions
-// function square(x) {
-//   updateXInDatabase(x)
-//   return x * x
-// }
-
-// function squareAll(items) {
-//   for (let i = 0; i < items.length; i++) {
-//     items[i] = square(items[i])
-//   }
-// }
-
-// function sumAll(items) {
-//   return items.reduce((acc, cur) => acc + cur, 0)
-// }
-
-// function squareAll(items) {
-//   return items.map((n) => n * n)
-// }
-
 import deepFreeze from 'deep-freeze'
 
 function counter(state, action) {
@@ -63,11 +34,25 @@ function todos(state, action) {
       ]
     case 'TOGGLE_TODO':
       return state.map((todo) => {
-        if (todo.id === action.id) {
-          todo.completed = !todo.completed
+        if (todo.id !== action.id) {
+          return todo
         }
-        return todo
+
+        return {
+          ...todo,
+          completed: !todo.completed,
+        }
       })
+    // return state.map((todo) => {
+    //   if (todo.id !== action.id) {
+    //     return todo
+    //   }
+
+    //   return {
+    //     ...todo,
+    //     completed: !todo.completed,
+    //   }
+    // })
     default:
       return state
   }
@@ -76,6 +61,7 @@ function todos(state, action) {
 test('todos reducer', () => {
   const todoBefore = []
   const todoAfter = [{ id: 1, text: 'Learn Redux', completed: false }]
+  deepFreeze(todoBefore)
 
   expect(
     todos(todoBefore, {
@@ -84,26 +70,43 @@ test('todos reducer', () => {
       completed: false,
     })
   ).toEqual(todoAfter)
-
-  expect(
-    todos(todoAfter, {
-      type: 'ADD_TODO',
-      text: 'Learn React-Redux',
-      completed: false,
-    })
-  ).toEqual([
-    ...todoAfter,
-    { id: 2, text: 'Learn React-Redux', completed: false },
-  ])
-
-  todos(todoAfter, {
-    type: 'TOGGLE_TODO',
-    text: 'Learn React-Redux',
-    completed: false,
-  })
 })
 
+const toggleTodo = (todo) => {
+  // todo.completed = !todo.completed
+  // return todo
+
+  // return {
+  //   id: todo.id,
+  //   text: todo.text,
+  //   completed: !todo.completed,
+  // }
+  return {
+    ...todo,
+    completed: !todo.completed,
+  }
+}
+
 test('toggle todo', () => {
+  const todoBefore = {
+    id: 1,
+    text: 'Learn React',
+    completed: false,
+  }
+  const todoAfter = {
+    id: 1,
+    text: 'Learn React',
+    completed: true,
+  }
+
+  deepFreeze(todoBefore)
+
+  expect(toggleTodo(todoBefore, { type: 'TOGGLE_TODO', id: 1 })).toEqual(
+    todoAfter
+  )
+})
+
+test('toggle todo reducer', () => {
   const todoBefore = [
     {
       id: 1,
@@ -118,6 +121,8 @@ test('toggle todo', () => {
       completed: true,
     },
   ]
+
+  deepFreeze(todoBefore)
 
   expect(todos(todoBefore, { type: 'TOGGLE_TODO', id: 1 })).toEqual(todoAfter)
 })
