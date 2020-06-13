@@ -37,7 +37,7 @@ export class CounterRedux extends Component {
   render() {
     return (
       <div>
-        Counter: {this.state.count}
+        <p>Counter: {this.state.count}</p>
         <div>
           <button onClick={() => store.dispatch({ type: 'INCREMENT' })}>
             +1

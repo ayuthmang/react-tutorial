@@ -14,7 +14,7 @@ const store = createStore(reducer)
 function Counter(props) {
   return (
     <div>
-      Counter: {props.count}
+      <p>Counter: {props.count}</p>
       <div>
         <button onClick={() => props.dispatch({ type: 'INCREMENT' })}>
           +1

@@ -7,7 +7,7 @@ import { increment, decrement, reset } from './actions'
 let App = ({ count, increment, decrement, reset }) => {
   return (
     <div>
-      Count: {count}
+      <p>Count: {count}</p>
       <div>
         <button onClick={() => increment()}>+1</button>
         <button onClick={() => decrement()}>-1</button>
