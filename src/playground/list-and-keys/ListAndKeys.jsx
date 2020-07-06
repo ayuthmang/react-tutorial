@@ -13,6 +13,7 @@ function SuperheroList(props) {
     <div>
       <h1>Superhero List</h1>
       <ul>
+        {/* using map's key may cause a performance issue */}
         {props.superheroes.map((hero, index) => {
           return <li key={index}>{hero}</li>
         })}
