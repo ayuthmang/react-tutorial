@@ -11,7 +11,6 @@ export default class App extends React.Component {
     return (
       <React.Fragment key={'some uniqe key'}>
         <div></div>
-        { ... }
       </React.Fragment>
     )
   }
