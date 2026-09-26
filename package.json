@@ -6,12 +6,12 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
-    "axios": "^0.19.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "axios": "^0.33.0",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.1",
+    "react-scripts": "5.0.1",
     "redux": "^4.0.5",
     "styled-components": "^5.1.0"
   },
@@ -48,5 +48,21 @@
     "prettier": "^2.0.5",
     "prop-types": "^15.7.2",
     "redux-logger": "^3.0.6"
+  },
+  "overrides": {
+    "@babel/runtime-corejs3@>=7.0.0 <7.26.10": "^7.26.10",
+    "ansi-regex@>=4.0.0 <4.1.1": "^4.1.1",
+    "ansi-regex@>=5.0.0 <5.0.1": "^5.0.1",
+    "follow-redirects@>=1.0.0 <1.16.0": "^1.16.0",
+    "nth-check@>=1.0.0 <2.0.0": "^2.0.1",
+    "path-to-regexp@>=1.0.0 <1.9.0": "^1.9.0",
+    "svgo@>=1.0.0 <2.0.0": "^2.8.4",
+    "underscore@>=1.0.0 <1.13.8": "^1.13.8",
+    "uuid@>=8.0.0 <9.0.0": "^11.1.1",
+    "webpack-dev-server@>=4.0.0 <5.0.0": "^5.2.6",
+    "@tootallnate/once": "^2.0.1",
+    "decode-uri-component": "^0.5.0",
+    "postcss": "^8.5.23",
+    "serialize-javascript": "^7.1.2"
   }
 }
